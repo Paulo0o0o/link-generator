@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link Generator</title>
+</head>
+<body>
+    <h1>Link Generator</h1>
+    <input type="text" id="originalUrl" placeholder="Enter the original URL">
+    <button onclick="generateLink()">Generate Link</button>
+    <p id="generatedLink"></p>
+
+    <script>
+        function generateLink() {
+            const originalUrl = document.getElementById('originalUrl').value;
+            const generatedUrl = Math.random().toString(36).substring(2, 15);
+            document.getElementById('generatedLink').innerText = `Generated URL: https://example.com/${generatedUrl}`;
+        }
+    </script>
+</body>
+</html>
