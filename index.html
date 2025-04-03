@@ -3,7 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Link Generator</title>
+    <title>Link Generator with Cookie Clicker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #333;
+        }
+        input {
+            padding: 10px;
+            width: 300px;
+            margin-right: 10px;
+        }
+        button {
+            padding: 10px 20px;
+        }
+        #generatedLink {
+            margin-top: 20px;
+        }
+        #cookieClicker {
+            margin-top: 50px;
+            text-align: center;
+        }
+        .click-button {
+            padding: 20px;
+            font-size: 20px;
+            margin: 20px;
+        }
+        .click-count {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
     <h1>Link Generator</h1>
@@ -11,11 +46,24 @@
     <button onclick="generateLink()">Generate Link</button>
     <p id="generatedLink"></p>
 
+    <div id="cookieClicker">
+        <h2>Cookie Clicker</h2>
+        <button class="click-button" onclick="clickCookie()">Click Me!</button>
+        <div class="click-count" id="clickCount">Clicks: 0</div>
+    </div>
+
     <script>
         function generateLink() {
             const originalUrl = document.getElementById('originalUrl').value;
             const generatedUrl = Math.random().toString(36).substring(2, 15);
             document.getElementById('generatedLink').innerText = `Generated URL: https://example.com/${generatedUrl}`;
+        }
+
+        let clickCount = 0;
+
+        function clickCookie() {
+            clickCount++;
+            document.getElementById('clickCount').innerText = `Clicks: ${clickCount}`;
         }
     </script>
 </body>
