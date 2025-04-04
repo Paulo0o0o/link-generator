@@ -29,14 +29,12 @@
 </head>
 <body>
     <h1>Link Generator</h1>
-    <input type="text" id="originalUrl" placeholder="Enter the original URL">
-    <input type="number" id="numUrls" placeholder="Number of URLs" min="1">
+    <input type="text" id="numUrls" placeholder="Number of URLs" min="1">
     <button onclick="generateLinks()">Generate Links</button>
     <div id="generatedLinks"></div>
 
     <script>
         function generateLinks() {
-            const originalUrl = document.getElementById('originalUrl').value;
             const numUrls = document.getElementById('numUrls').value;
             const generatedLinksDiv = document.getElementById('generatedLinks');
 
@@ -44,7 +42,7 @@
 
             for (let i = 0; i < numUrls; i++) {
                 const generatedUrl = Math.random().toString(36).substring(2, 15);
-                const fullUrl = `${originalUrl}?unique=${generatedUrl}`;
+                const fullUrl = `cookie-clicker.html?unique=${generatedUrl}`;
 
                 const linkElement = document.createElement('a');
                 linkElement.href = fullUrl;
@@ -59,7 +57,5 @@
             }
         }
     </script>
-</body>
-</html>
 </body>
 </html>
